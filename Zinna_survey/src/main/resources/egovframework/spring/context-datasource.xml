@@ -9,6 +9,17 @@
 		<jdbc:script location= "classpath:/db/sampledb.sql"/>
 	</jdbc:embedded-database>
      
+     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <!-- <property name="driverClassName" value="${Globals.DriverClassName}"/>
+        <property name="url" value="${Globals.Url}" />
+        <property name="username" value="${Globals.UserName}"/>
+        <property name="password" value="${Globals.Password}"/> -->
+        <property name="driverClassName" value="core.log.jdbc.driver.CUBRIDDriver"/>
+        <property name="url" value="jdbc:cubrid:192.168.0.200:30000:survey_zinna:::?charset=UTF-8" />
+        <property name="username" value="dba"/>
+        <property name="password" value="admin"/>
+    </bean>
+     
      
     <!-- hsql (테스트용 메모리 DB)
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
