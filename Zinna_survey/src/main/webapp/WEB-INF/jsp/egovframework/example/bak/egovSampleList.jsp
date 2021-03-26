@@ -23,7 +23,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>설문조사 목록 관리</title>
+    <title><spring:message code="title.sample" /></title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
     <script type="text/javaScript" language="javascript" defer="defer">
         <!--
@@ -64,7 +64,7 @@
         	<!-- 타이틀 -->
         	<div id="title">
         		<ul>
-        			<li><img src="<c:url value='/images/egovframework/example/title_dot.gif'/>" alt=""/>설문조사 목록 관리</li>
+        			<li><img src="<c:url value='/images/egovframework/example/title_dot.gif'/>" alt=""/><spring:message code="list.sample" /></li>
         		</ul>
         	</div>
         	<!-- // 타이틀 -->
@@ -90,45 +90,32 @@
         	</div>
         	<!-- List -->
         	<div id="table">
-        		<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+        		<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="카테고리ID, 케테고리명, 사용여부, Description, 등록자 표시하는 테이블">
+        			<caption style="visibility:hidden">카테고리ID, 케테고리명, 사용여부, Description, 등록자 표시하는 테이블</caption>
         			<colgroup>
         				<col width="40"/>
         				<col width="100"/>
-        				<col width="100"/>
+        				<col width="150"/>
         				<col width="80"/>
         				<col width="?"/>
-        				<col width="60"/>
-        				<col width="60"/>
         				<col width="60"/>
         			</colgroup>
         			<tr>
         				<th align="center">No</th>
-        				<th align="center">설문조사 번호</th>
-        				<th align="center">설문조사 제목</th>
-        				<th align="center">설문조사 상태 </th>
-        				<th align="center">설문조사 설명</th>
-        				<th align="center">등록자 </th>
-        				<th align="center">설문조사 등록일 </th>
-        				<th align="center">설문조사 수정일 </th>
+        				<th align="center"><spring:message code="title.sample.id" /></th>
+        				<th align="center"><spring:message code="title.sample.name" /></th>
+        				<th align="center"><spring:message code="title.sample.useYn" /></th>
+        				<th align="center"><spring:message code="title.sample.description" /></th>
+        				<th align="center"><spring:message code="title.sample.regUser" /></th>
         			</tr>
         			<c:forEach var="result" items="${resultList}" varStatus="status">
             			<tr>
             				<td align="center" class="listtd"><c:out value="${paginationInfo.totalRecordCount+1 - ((searchVO.pageIndex-1) * searchVO.pageSize + status.count)}"/></td>
-            				<td align="center" class="listtd"></td>
-            				<td align="left" class="listtd"></td>
-            				<td align="center" class="listtd"></td>
-            				<td align="center" class="listtd"></td>
-            				<td align="center" class="listtd"></td>
-            				<td align="center" class="listtd"></td>
-            				<td align="center" class="listtd"></td>
-	            				
-            				<%-- <td align="center" class="listtd"><c:out value="${paginationInfo.totalRecordCount+1 - ((searchVO.pageIndex-1) * searchVO.pageSize + status.count)}"/></td>
             				<td align="center" class="listtd"><a href="javascript:fn_egov_select('<c:out value="${result.id}"/>')"><c:out value="${result.id}"/></a></td>
             				<td align="left" class="listtd"><c:out value="${result.name}"/>&nbsp;</td>
             				<td align="center" class="listtd"><c:out value="${result.useYn}"/>&nbsp;</td>
             				<td align="center" class="listtd"><c:out value="${result.description}"/>&nbsp;</td>
-            				<td align="center" class="listtd"><c:out value="${result.regUser}"/>&nbsp;</td> --%>
-            				
+            				<td align="center" class="listtd"><c:out value="${result.regUser}"/>&nbsp;</td>
             			</tr>
         			</c:forEach>
         		</table>
@@ -142,7 +129,7 @@
         	  <ul>
         	      <li>
         	          <span class="btn_blue_l">
-        	              <a href="javascript:fn_egov_addView();">설문조사  등록하기</a>
+        	              <a href="javascript:fn_egov_addView();"><spring:message code="button.create" /></a>
                           <img src="<c:url value='/images/egovframework/example/btn_bg_r.gif'/>" style="margin-left:6px;" alt=""/>
                       </span>
                   </li>

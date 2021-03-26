@@ -142,7 +142,7 @@
         	  <ul>
         	      <li>
         	          <span class="btn_blue_l">
-        	              <a href="javascript:fn_egov_addView();">설문조사  등록하기</a>
+        	              <a href="javascript:fn_egov_addView();"><spring:message code="button.create" /></a>
                           <img src="<c:url value='/images/egovframework/example/btn_bg_r.gif'/>" style="margin-left:6px;" alt=""/>
                       </span>
                   </li>

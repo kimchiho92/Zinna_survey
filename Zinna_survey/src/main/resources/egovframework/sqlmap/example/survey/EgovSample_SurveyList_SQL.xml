@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="SurveyList">
+
+
+		<typeAlias alias="searchVO" type="egovframework.example.survey.service.SurveyDefaultVO"/>
+		<typeAlias alias="surveyVO" type="egovframework.example.survey.service.SurveyVO"/>
+
+
+		<resultMap id="survey" class="egovframework.example.survey.service.SurveyVO">
+			<result property="surveyId" column="survey_id"/>
+			<result property="surveyDescription" column="survey_description"/>
+			<result property="surveyRegDt" column="survey_reg_dt"/>
+			<result property="surveyRegUser" column="survey_reg_user"/>
+			<result property="surveyState" column="survey_state"/>
+			<result property="surveyTitle" column="survey_title"/>
+			<result property="surveyUpdateDt" column="survey_update_dt"/>
+		</resultMap>
+		
+		
+		<select id="surveyListDAO.selectSurveyList" parameterClass="searchVO" resultClass="egovMap">
+
+			SELECT
+				surveyId, surveyDescription, surveyRegDt, surveyRegUser, surveyState,surveyTitle,surveyUpdateDt
+			FROM survey
+			WHERE 1=1
+			<isEqual prepend="AND" property="searchCondition" compareValue="0">
+				surveyId LIKE '%' || #searchKeyword# || '%'
+			</isEqual>
+			ORDER BY ID DESC
+			LIMIT #recordCountPerPage# OFFSET #firstIndex#		
+	</select>
+</sqlMap>

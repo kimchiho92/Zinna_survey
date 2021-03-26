@@ -1,2 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<jsp:forward page="/egovSampleList.do"/>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>설문조사</title>
+</head>
+<body>
+<div>
+<button onclick ="location.href = 'main.jsp'" >설문조사 관리 목록 들어가기</button>
+</div>
+<div>
+	<button onclick ="location.href = 'main.jsp'" >설문조사 참여하기 </button>
+</div>
+
+
+</body>
+</html>
